@@ -1,1 +1,62 @@
 /* Login Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  /* border: 5px dashed rgba(255, 131, 131, 0.5);
+  background-color: rgba(255, 131, 131, 0.1); */
+
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+    justify-content: center;
+}
+
+
+/* Login Left >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+#main-left {
+  border: 5px dashed rgba(255, 131, 131, 0.5);
+  background-color: #ffffff;
+
+  height: 100%;
+  width: 40%;
+
+  padding: 6% 4%;
+
+  display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#login-brand, #login-container, #login-credit {
+  border: 5px dashed rgba(255, 131, 131, 0.5);
+  background-color: #ffffff;
+  width: 100%;
+}
+
+#login-container input {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 40px;
+  display: block;
+}
+
+/* Login Right >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+#main-right {
+  border: 5px dashed rgba(255, 131, 131, 0.5);
+  background-color: rgba(255, 131, 131, 0.1);
+  background: url('virus.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 60%;
+  height: 100%;
+}

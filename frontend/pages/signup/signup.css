@@ -1,1 +1,9 @@
 /* Signup Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
