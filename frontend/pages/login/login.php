@@ -33,7 +33,7 @@
       <input type="password" name="password" placeholder="Must be at least 6 characters">
 
       <div id="spaceBetween">
-        <a id="signupLink" href="#">Create account</a>
+        <a id="signupLink" href="http://localhost/cs174/online-virus-check/frontend/pages/signup/signup.html">Create account</a>
         <input type="submit" value="Login">
       </div>
 
