@@ -1,4 +1,6 @@
 /* Login Styles */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
 * {
   box-sizing: border-box;
 }
@@ -8,9 +10,10 @@ body {
 }
 
 main {
-  /* border: 5px dashed rgba(255, 131, 131, 0.5);
-  background-color: rgba(255, 131, 131, 0.1); */
-
+  background-color: rgba(255, 131, 131, 0.1);
+  font-family: 'Roboto', sans-serif;
+  color: #202124;
+  
   height: 100vh;
   width: 100%;
 
@@ -23,7 +26,7 @@ main {
 
 /* Login Left >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 #main-left {
-  border: 5px dashed rgba(255, 131, 131, 0.5);
+  border: 1px dashed rgba(255, 131, 131, 0.5);
   background-color: #ffffff;
 
   height: 100%;
@@ -37,26 +40,70 @@ main {
     justify-content: space-between;
 }
 
+#title, h2 {
+  font-weight: 500;
+}
+
 #login-brand, #login-container, #login-credit {
-  border: 5px dashed rgba(255, 131, 131, 0.5);
+  /* border: 1px dashed rgba(255, 131, 131, 0.5); */
   background-color: #ffffff;
   width: 100%;
 }
 
+label {
+  display: block;
+  font-size: 10px;
+  /* font-weight: bolder; */
+  margin-bottom: 4px;
+}
+
 #login-container input {
   margin-bottom: 10px;
+  padding: 6px 10px;
+  height: 36px;
   width: 100%;
-  height: 40px;
-  display: block;
+  color: #202124;
+
+  outline: none;
+  border: 1px solid #eaeaea; 
+  /* border-color: black;
+  border-width: 1px; */
+  border-radius: 4px;
+  transition: 100ms;
+}
+
+#login-container input[type=submit] {
+  background-color: #1a73e8;
+  color: #ffffff;
+}
+
+#login-container input:focus {
+  border: 2px solid #1a73e8; 
+  padding-left: 9px;
 }
 
 /* Login Right >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 #main-right {
-  border: 5px dashed rgba(255, 131, 131, 0.5);
+  border: 1px dashed rgba(255, 131, 131, 0.5);
   background-color: rgba(255, 131, 131, 0.1);
-  background: url('virus.jpg');
+  /* background: url('virus.jpg'); */
+  background: url('../../resources/login-1200px.png');
   background-size: cover;
   background-position: center;
   width: 60%;
   height: 100%;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+
+  #main-left {
+    width: 100%;
+  }
+
+  #main-right {
+    display: none;
+  }
 }
