@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="signup.css">
-  <title>Login Page</title>
-</head>
-
 <body>
 
   <main>
@@ -36,8 +25,7 @@
           <input type="password" name="password" placeholder="Must be at least 6 characters">
 
           <div id="spaceBetween">
-            <a id="signupLink" href="http://localhost/cs174/online-virus-check/frontend/pages/login/login.php">Log in
-              instead</a>
+            <a id="signupLink" href="http://localhost/cs174/online-virus-check/frontend/pages/login/base.php">Log in instead</a>
             <input type="submit" value="Signup">
           </div>
 
@@ -52,5 +40,3 @@
   </main>
 
 </body>
-
-</html>
