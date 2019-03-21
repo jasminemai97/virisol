@@ -121,7 +121,7 @@ input[type=submit]:hover {
 #main-right {
   /* border: 1px dashed rgba(255, 131, 131, 0.5); */
   background-color: rgba(255, 131, 131, 0.1);
-  background: url('../../resources/login-1200px.png');
+  background: url('../../resources/signup-1200px.png');
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
