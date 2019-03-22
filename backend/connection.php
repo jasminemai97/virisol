@@ -4,7 +4,7 @@
   $server_name = "localhost"
   $database_username = "root";
   $database_password = "";
-  $database_name = "cs174_db";
+  $database_name = "projectDB";
 
   // Connects to the MySQL database. 
   $conn = new mysqli($server_name, $database_username, $database_password, $database_name);
@@ -14,4 +14,5 @@
   if ($conn -> connect_error) {
     die("Unable to connect");
   }
+  
 ?>
