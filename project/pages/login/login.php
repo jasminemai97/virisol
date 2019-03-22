@@ -1,4 +1,4 @@
-<main>
+<main class="center">
   <div id="main-left">
     <div id="login-brand">
       <p id="title">CS174 • Onlive Virus Checker</p>
@@ -14,7 +14,7 @@
         <?php require '../../components/input-password.php'; ?>
 
         <div id="spaceBetween">
-          <a id="signupLink" href="../signup/">Create account</a>
+          <a class="center" id="signupLink" href="../signup/">Create account</a>
           <input type="submit" name="submit-login" value="Login">
         </div>
 
