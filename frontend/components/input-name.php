@@ -1,2 +1,2 @@
 <label for="name">Name</label>
-<input type="text" name="name" placeholder="e.g. John Doe">
+<input type="text" name="name" placeholder="e.g. John Doe" spellcheck="false" required>
