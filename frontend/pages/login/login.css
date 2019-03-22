@@ -37,7 +37,7 @@ main {
     justify-content: space-between;
   height: 100%;
   padding: 6% 4%;
-  width: 40%;
+  width: 45%;
 }
 
 #title, h2 {
@@ -121,17 +121,18 @@ input[type=submit]:hover {
 #main-right {
   /* border: 1px dashed rgba(255, 131, 131, 0.5); */
   background-color: rgba(255, 131, 131, 0.1);
-  background: url('../../resources/login-1200px.png');
-    background-size: 80%;
+  background: url('../../resources/login-1200px.png'), 
+              linear-gradient(to right top, #845ec2, #7464c8, #6169cd, #4b6ed0, #2c73d2);
+    background-size: 102%;
     background-position: center;
     background-repeat: no-repeat;
-  width: 60%;
+  width: 55%;
   height: 100%;
 }
 
 
 /* Media Queries =================================== */
-@media (max-width: 750px) {
+@media (max-width: 700px) {
   body {
     background-color: rgba(255, 0, 0, 0.1);
   }
