@@ -15,7 +15,7 @@
           <?php require '../../components/input-password.php'; ?>
 
           <div id="spaceBetween">
-            <a id="signupLink" href="../login/base.php">Log in instead</a>
+            <a id="signupLink" href="../login/">Log in instead</a>
             <input type="submit" name="submit-signup" value="Signup">
           </div>
 

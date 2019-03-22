@@ -14,7 +14,7 @@
         <?php require '../../components/input-password.php'; ?>
 
         <div id="spaceBetween">
-          <a id="signupLink" href="../signup/base.php">Create account</a>
+          <a id="signupLink" href="../signup/">Create account</a>
           <input type="submit" name="submit-login" value="Login">
         </div>
 
