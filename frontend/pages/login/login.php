@@ -1,5 +1,3 @@
-<body>
-
 <main>
   <div id="main-left">
     <div id="login-brand">
@@ -8,26 +6,24 @@
 
     <!-- Form Start ================================== -->
     <div id="login-container">
-      <h2>Welcome back, please login to your account</h2>
+      <h2>Login to your account</h2>
       
-      <form>
+      <form method="POST">
 
-        <?php include '../../components/input-email.php'; ?>
-        <?php include '../../components/input-password.php'; ?>
+        <?php require '../../components/input-email.php'; ?>
+        <?php require '../../components/input-password.php'; ?>
 
         <div id="spaceBetween">
-          <a id="signupLink" href="http://localhost/cs174/online-virus-check/frontend/pages/signup/base.php">Create account</a>
-          <input type="submit" value="Login">
+          <a id="signupLink" href="../signup/base.php">Create account</a>
+          <input type="submit" name="submit-login" value="Login">
         </div>
 
       </form>
     </div>
     
     <div id="login-credit">
-      <p>Nhat Nguyen • Jasmine Mai • Albert Ong</p>
+      <p style="font-size:14px;">Nhat Nguyen • Jasmine Mai • Albert Ong</p>
     </div>
   </div>
   <div id="main-right"></div>
 </main>
-
-</body>
