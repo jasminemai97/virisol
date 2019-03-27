@@ -1,18 +1,14 @@
-<?php 
+<?php
 
-  // Information needed to connect to the MySQL database. 
-  $server_name = "localhost"
-  $database_username = "root";
-  $database_password = "";
-  $database_name = "projectDB";
-
-  // Connects to the MySQL database. 
-  $conn = new mysqli($server_name, $database_username, $database_password, $database_name);
+  // Information needed to connect to the MySQL database.
+  $hostname = "localhost";
+	$username = "username";
+	$password = "password";
+	$database = "projectDB";
 
 
-  // Error message if unable to connect. 
-  if ($conn -> connect_error) {
-    die("Unable to connect");
-  }
-  
+  // Connects to the MySQL database. Error message if unable to connect.
+  $conn = new mysqli($hostname, $username, $password, $database);
+	if ($conn->connect_error) die($conn->connect_error);
+
 ?>

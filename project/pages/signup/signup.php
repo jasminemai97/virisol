@@ -8,7 +8,7 @@
     <div id="login-container">
       <h2>Create your account</h2>
 
-        <form action="../login/base.php" method="POST">
+        <form action="../login/" method="POST">
 
           <?php require '../../components/input-name.php'; ?>
           <?php require '../../components/input-email.php'; ?>
