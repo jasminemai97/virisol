@@ -13,6 +13,10 @@ Group project for CS 147: Server-side Web Programming.
 * PHP
 * MySQL
 
+
+## License
+All parts of Online Virus Check are free to use and abuse under the open-source MIT license.
+
 ## Acknowledgement
 Written by Jasmine Mai, Nhat Nguyen, and Albert Ong
 
