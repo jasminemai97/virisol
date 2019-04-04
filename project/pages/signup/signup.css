@@ -1,6 +1,15 @@
-/* ================================================ */
-/*  Signup */
-/* ================================================ */
+
+/* singup.css
+ * 
+ * Stylesheet for the signup page. 
+ *
+ * Online Virus Check
+ * CS 174: Server-side Web Programming
+ * Professor Fabio Di Troia
+ * 
+ * Written by Jasmine Mai, Nhat Nguyen, and Albert Ong
+ * Revision 03.04.2019
+ */
 
 
 /* Import ========================================= */
@@ -43,8 +52,25 @@ main {
   width: 45%;
 }
 
-#title, h2 {
+/* Heading 1 and 2 ====================================== */
+h1 {
+  font-size: 3.5em; 
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.6em;
   font-weight: 500;
+}
+
+/* Author text =========================================== */
+#authors {
+  font-size: 0.65em;
+  color: #999999;
+}
+
+/* Styles the titles for components ====================== */
+.component-title {
+  font-size: 1em;
 }
 
 #login-brand, #login-container, #login-credit {
