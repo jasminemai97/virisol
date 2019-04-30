@@ -1,4 +1,5 @@
 <?php
+
 echo <<<_END
 <main class="center">
   <div id="main-left">
@@ -10,7 +11,7 @@ echo <<<_END
     <div id="login-container">
       <h2>Login to your account</h2>
 
-      <form method="POST">
+      <form action="index.php" method="post" enctype='multipart/form-data'>
 
 _END;
 
@@ -37,4 +38,33 @@ echo <<<_END
   <div id="main-right"></div>
 </main>
 _END;
+
+// Sanitize tnput functions
+require_once '../../scripts/sanitize.php';
+
+// Checks whether the varibles are set and not null
+if (isset($_POST['email']) && isset($_POST['password'])) {
+
+  // Sanitize the inputs
+  $email = mysql_entities_fix_string($conn, $_POST['email']);
+  $password = mysql_entities_fix_string($conn, $_POST['password']);
+  $salt1 = "JT5#SENTg4y";
+  $salt2 = "mL3QytJD&FO";
+  $token = hash('ripemd128', "$salt1$password$salt2");
+
+  $query = $conn->query("SELECT * FROM credentials WHERE user_email='$email' AND user_password='$token'");
+  $query_exists = $query->num_rows == 1;
+
+
+  if ($query_exists) {
+    echo "<div class='message' id='green'>Login Successful</div>";
+    // $_SESSION["username"] = $username;
+    // $_SESSION["isLogin"] = true;
+    // header('Location: ./dashboard.php');
+    // exit();
+  } else {
+    echo "<div class='message' id='red'>Login Failed</div>";
+  }
+}
+
 ?>
