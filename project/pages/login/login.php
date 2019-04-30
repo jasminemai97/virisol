@@ -38,8 +38,8 @@ echo <<<_END
 _END;
 
         // Email and password inputs
-        require '../../components/input-email.php';
-        require '../../components/input-password.php';
+        require_once '../../components/input-email.php';
+        require_once '../../components/input-password.php';
 
 echo <<<_END
 
