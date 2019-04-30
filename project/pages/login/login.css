@@ -1,12 +1,12 @@
 
 /* login.css
- * 
- * Stylesheet for the login page.  
+ *
+ * Stylesheet for the login page.
  *
  * Online Virus Check
  * CS 174: Server-side Web Programming
  * Professor Fabio Di Troia
- * 
+ *
  * Written by Jasmine Mai, Nhat Nguyen, and Albert Ong
  * Revision 03.04.2019
  */
@@ -55,7 +55,7 @@ main {
 
 /* Heading 1 and 2 ====================================== */
 h1 {
-  font-size: 3.5em; 
+  font-size: 3.5em;
   font-weight: bold;
 }
 h2 {
@@ -93,7 +93,7 @@ label span {
 }
 
 input[type=email], input[type=password] {
-  border: 1px solid #dddddd; 
+  border: 1px solid #dddddd;
   border-radius: 4px;
   color: #202124;
   height: 36px;
@@ -105,7 +105,7 @@ input[type=email], input[type=password] {
 }
 
 input:focus {
-  border: 2px solid #1a73e8; 
+  border: 2px solid #1a73e8;
   padding-left: 9px;
 }
 
@@ -149,11 +149,31 @@ input[type=submit]:hover {
   box-shadow: 0px 4px 16px 0px #3182eb3a;
 }
 
+/* Success and failure box ======================== */
+.message {
+  border-radius: 4px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  margin-bottom: 20px;
+  height: 40px;
+  width: 100%;
+}
+
+#green {
+  background-color: #00CC6A;
+  color: #ffffff;
+}
+
+#red {
+  background-color: #f26175;
+  color: #ffffff;
+}
+
 /* Login Right ===================================== */
 #main-right {
-  /* border: 1px dashed rgba(255, 131, 131, 0.5); */
   background-color: rgba(255, 131, 131, 0.1);
-  background: url('../../resources/login-1200px.png'), 
+  background: url('../../resources/login-1200px.png'),
               linear-gradient(to right top, #845ec2, #7464c8, #6169cd, #4b6ed0, #2c73d2);
     background-size: 102%;
     background-position: center;
