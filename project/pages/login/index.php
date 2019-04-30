@@ -1,4 +1,11 @@
 <?php
+
+// Start the project session
+session_start();
+
+// Database for user credentials
+require_once '../../scripts/credentialsDB.php';
+
 echo <<<_END
 <!DOCTYPE html>
 <html lang="en">
@@ -22,4 +29,8 @@ echo <<<_END
 
 </html>
 _END;
+
+// Close the connection
+$conn->close();
+
 ?>
