@@ -45,8 +45,8 @@ echo <<<_END
 
         <!-- Create account and login buttons -->
         <div id="spaceBetween">
-          <a class="center" id="signupLink" href="../signup">Create account</a>
-          <input type="submit" name="submit-login" value="Login">
+          <a class="btn center" href="../signup">Create account</a>
+          <button type="submit" class="btn-form">Login</button>
         </div>
       </form>
     </div>
