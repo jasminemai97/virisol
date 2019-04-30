@@ -26,9 +26,9 @@ echo <<<_END
 _END;
 
           // Email, username, and password inputs
-          require '../../components/input-email.php';
-          require '../../components/input-username.php';
-          require '../../components/input-password.php';
+          require_once '../../components/input-email.php';
+          require_once '../../components/input-username.php';
+          require_once '../../components/input-password.php';
 
 echo <<<_END
 
