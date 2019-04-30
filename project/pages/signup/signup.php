@@ -13,8 +13,9 @@ echo <<<_END
 
 _END;
 
+        // Displays error message
         if (isset($_SESSION["account_creation_failed"])) {
-          echo "<div class='message' id='red'>Email or username already exist</div>";
+          echo "<div class='message' id='red'>Email or username already exist!</div>";
           unset($_SESSION["account_creation_failed"]);
         }
 
@@ -75,8 +76,17 @@ if (isset($_POST['email']) && isset($_POST['username']) && isset($_POST['passwor
                     VALUES ('$email', '$username', '$token')";
     $conn->query($credentials);
 
+    // Set the successful message variable to true
+    $_SESSION["account_creation_successful"] = true;
+
+    // Go to login page
+    header('Location: ../login/index.php');
+    exit();
   } else {
+    // Set the error message variable to true
     $_SESSION["account_creation_failed"] = true;
+
+    // Refresh the current page
     header('Location: ./index.php');
     exit();
   }

@@ -11,6 +11,28 @@ echo <<<_END
     <div id="login-container">
       <h2>Login to your account</h2>
 
+_END;
+
+        // Displays account success message
+        if (isset($_SESSION["account_creation_successful"])) {
+          echo "<div class='message' id='green'>Account successful created!</div>";
+          unset($_SESSION["account_creation_successful"]);
+        }
+
+        // Displays login fail message
+        if (isset($_SESSION["login_failed"])) {
+          echo "<div class='message' id='red'>Your email or password were incorrect!</div>";
+          unset($_SESSION["login_failed"]);
+        }
+
+        // Displays login success message
+        if (isset($_SESSION["login_successful"])) {
+          echo "<div class='message' id='green'>You are successful logged in!</div>";
+          unset($_SESSION["login_successful"]);
+        }
+
+echo <<<_END
+
       <form action="index.php" method="post" enctype='multipart/form-data'>
 
 _END;
@@ -60,10 +82,20 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     echo "<div class='message' id='green'>Login Successful</div>";
     // $_SESSION["username"] = $username;
     // $_SESSION["isLogin"] = true;
-    // header('Location: ./dashboard.php');
-    // exit();
+
+    // Set the login successful variable to true
+    $_SESSION["login_successful"] = true;
+
+    // TODO: Go to dashboard! Currently refresh the current page
+    header('Location: ./index.php');
+    exit();
   } else {
-    echo "<div class='message' id='red'>Login Failed</div>";
+    // Set the login failed variable to true
+    $_SESSION["login_failed"] = true;
+
+    // Refresh the current page
+    header('Location: ./index.php');
+    exit();
   }
 }
 
