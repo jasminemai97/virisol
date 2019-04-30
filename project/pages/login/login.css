@@ -116,37 +116,47 @@ input:focus {
   margin-top: 25px;
 }
 
-#signupLink {
+.btn {
   border: 1px solid #dddddd;
   border-radius: 4px;
   color: #1a73e8;
+  font-size: 14px;
   height: 36px;
   margin: auto 0;
+  padding: 0 16px;
   text-decoration: none;
   transition: 100ms;
-  width: 128px;
 }
 
-#signupLink:hover {
+.btn:hover {
   background-color: #f7f7f7;
   box-shadow: 0px 4px 16px 0px rgba(228, 228, 228, 0.50)
 }
 
-input[type=submit] {
+::placeholder {
+  color: #696969;
+  font-size: 12px;
+}
+
+.btn-form {
   background-color: #1a73e8;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   color: #ffffff;
   height: 36px;
+  font-size: 14px;
   transition: 100ms;
-  outline: none;
   width: 80px;
 }
 
-input[type=submit]:hover {
+.btn-form:hover {
   background-color: #3181eb;
   box-shadow: 0px 4px 16px 0px #3182eb3a;
+}
+
+.btn-form:focus {
+  outline:0 !important;
 }
 
 /* Success and failure box ======================== */
