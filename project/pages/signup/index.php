@@ -3,6 +3,7 @@
 // Start the project session
 session_start();
 
+// Database for user credentials
 require_once '../../scripts/credentialsDB.php';
 
 echo <<<_END
