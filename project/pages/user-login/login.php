@@ -70,7 +70,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $_SESSION["login_successful"] = true;
 
     // TODO: Go to dashboard! Currently refresh the current page
-    header('Location: ./index.php');
+    header('Location: ../user-dashboard');
     exit();
   } else {
     // Set the login failed variable to true

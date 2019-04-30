@@ -1,0 +1,11 @@
+{
+  // Workspace Settings ----------------------------------- /
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  // Custom Spacing --------------------------------------- /
+  "[html], [css], [scss], [javascript], [json], [php], [python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+  },
+}

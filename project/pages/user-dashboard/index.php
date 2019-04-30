@@ -14,7 +14,7 @@ echo <<<_END
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="dashboard.css">
   <link rel="icon" href="../../resources/favicon.png">
   <title>Dashboard - Online Virus Check</title>
 </head>
@@ -22,7 +22,7 @@ echo <<<_END
 <body>
 _END;
 
-  require 'signup.php';
+  require 'dashboard.php';
 
 echo <<<_END
 </body>
