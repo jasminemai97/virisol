@@ -11,7 +11,16 @@ echo <<<_END
     <div id="login-container">
       <h2>Create your account</h2>
 
-        <form action="index.php" method="post" enctype='multipart/form-data'>
+_END;
+
+        if (isset($_SESSION["account_creation_failed"])) {
+          echo "<div class='message' id='red'>Email or username already exist</div>";
+          unset($_SESSION["account_creation_failed"]);
+        }
+
+echo <<<_END
+
+        <form action="./index.php" method="post" enctype='multipart/form-data'>
 
 _END;
 
@@ -65,9 +74,11 @@ if (isset($_POST['email']) && isset($_POST['username']) && isset($_POST['passwor
     $credentials = "INSERT INTO credentials (user_email, user_username, user_password)
                     VALUES ('$email', '$username', '$token')";
     $conn->query($credentials);
-    // echo "<div class='message' id='green'>Signup Successful</div>";
+
   } else {
-    // echo "<div class='message' id='red'>Email or username exist</div>";
+    $_SESSION["account_creation_failed"] = true;
+    header('Location: ./index.php');
+    exit();
   }
 }
 
