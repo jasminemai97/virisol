@@ -30,7 +30,7 @@ _END;
 echo <<<_END
 
           <div id="spaceBetween">
-            <a class="btn center" href="../login">Log in instead</a>
+            <a class="btn center" href="../user-login">Log in instead</a>
             <button type="submit" class="btn-form">Signup</button>
           </div>
 
@@ -47,7 +47,7 @@ echo <<<_END
 </main>
 _END;
 
-// Sanitize tnput functions
+// Sanitize input functions
 require_once '../../scripts/sanitize.php';
 
 // Checks whether the varibles are set and not null
@@ -77,7 +77,7 @@ if (isset($_POST['email']) && isset($_POST['username']) && isset($_POST['passwor
     $_SESSION["account_creation_successful"] = true;
 
     // Go to login page
-    header('Location: ../login/index.php');
+    header('Location: ../user-login');
     exit();
   } else {
     // Set the error message variable to true

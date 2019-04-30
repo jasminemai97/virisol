@@ -1,7 +1,7 @@
 
-/* login.css
+/* singup.css
  *
- * Stylesheet for the login page.
+ * Stylesheet for the signup page.
  *
  * Online Virus Check
  * CS 174: Server-side Web Programming
@@ -30,7 +30,7 @@ body {
     justify-content: center;
 }
 
-/* Code ================================================ */
+/* Code ============================================ */
 main {
   /* background-color: rgba(255, 131, 131, 0.1); */
   color: #202124;
@@ -39,7 +39,7 @@ main {
   width: 100%;
 }
 
-/* Login Left ========================================== */
+/* Login Left ====================================== */
 #main-left {
   /* border: 1px dashed rgba(255, 131, 131, 0.5); */
   background-color: #ffffff;
@@ -51,7 +51,6 @@ main {
   padding: 6% 4%;
   width: 45%;
 }
-
 
 /* Heading 1 and 2 ====================================== */
 h1 {
@@ -74,7 +73,6 @@ h2 {
   font-size: 1em;
 }
 
-
 #login-brand, #login-container, #login-credit {
   /* border: 1px dashed rgba(255, 131, 131, 0.5); */
   background-color: #ffffff;
@@ -92,7 +90,7 @@ label span {
   color: #ff0000;
 }
 
-input[type=email], input[type=password] {
+input[type=text], input[type=email], input[type=password] {
   border: 1px solid #dddddd;
   border-radius: 4px;
   color: #202124;
@@ -134,8 +132,9 @@ input:focus {
 }
 
 ::placeholder {
-  color: #696969;
+  color: #929292;
   font-size: 12px;
+  opacity: 1;
 }
 
 .btn-form {
@@ -183,9 +182,9 @@ input:focus {
 /* Login Right ===================================== */
 #main-right {
   background-color: rgba(255, 131, 131, 0.1);
-  background: url('../../resources/login-1200px.png'),
-              linear-gradient(to right top, #845ec2, #7464c8, #6169cd, #4b6ed0, #2c73d2);
-    background-size: 102%;
+  background: url('../../resources/signup-1200px.png'),
+              linear-gradient(to right top, #ff6f91, #ff807d, #ff966d, #ffae61, #ffc75f);
+    background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
   width: 55%;
