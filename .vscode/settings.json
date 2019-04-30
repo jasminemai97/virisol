@@ -1,0 +1,14 @@
+{
+  // Workspace Settings --------------------------------- /
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "all",
+  // Custom Spacing ------------------------------------- /
+  "editor.detectIndentation": true,
+  "[php], [html], [css], [scss], [javascript], [json]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  }
+}
