@@ -1,18 +1,12 @@
+<?php
 
-<!--
-index.php
+// Start the project session
+session_start();
 
-The main program of Online Virus Check. 
-Displays the login page. 
+// Database for user credentials
+require_once '../../scripts/credentialsDB.php';
 
-Online Virus Check
-CS 174: Server-side Web Programming
-Professor Fabio Di Troia
-
-Written by Jasmine Mai, Nhat Nguyen, and Albert Ong
-Revision 03.04.2019
--->
-
+echo <<<_END
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,11 +16,21 @@ Revision 03.04.2019
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="login.css">
   <link rel="icon" href="../../resources/favicon.png">
-  <title>Online Virus Check</title>
+  <title>Login - Online Virus Check</title>
 </head>
 
 <body>
-  <?php require 'login.php'; ?>
+_END;
+
+  require 'login.php';
+
+echo <<<_END
 </body>
 
 </html>
+_END;
+
+// Close the connection
+$conn->close();
+
+?>

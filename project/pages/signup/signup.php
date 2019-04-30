@@ -1,17 +1,6 @@
+<?php
 
-<!--
-signup.php
-
-The signup page for Online Virus Check.
-
-Online Virus Check
-CS 174: Server-side Web Programming
-Professor Fabio Di Troia
-
-Written by Jasmine Mai, Nhat Nguyen, and Albert Ong
-Revision 03.04.2019
--->
-
+echo <<<_END
 <main class="center">
   <div id="main-left">
     <div id="login-brand">
@@ -22,39 +11,31 @@ Revision 03.04.2019
     <div id="login-container">
       <h2>Create your account</h2>
 
-        <form action="../login/" method="POST">
+_END;
 
-          <?php require '../../components/input-username.php'; ?>
-          <?php require '../../components/input-email.php'; ?>
-          <?php require '../../components/input-password.php'; ?>
+        // Form message after submission
+        require_once '../../components/input-message-signup.php';
+
+echo <<<_END
+
+        <form action="./index.php" method="post" enctype='multipart/form-data'>
+
+_END;
+
+          // Email, username, and password inputs
+          require_once '../../components/input-email.php';
+          require_once '../../components/input-username.php';
+          require_once '../../components/input-password.php';
+
+echo <<<_END
 
           <div id="spaceBetween">
-            <a class="center" id="signupLink" href="../login/">Log in instead</a>
-            <input type="submit" name="submit-signup" value="Signup">
+            <a class="btn center" href="../login">Log in instead</a>
+            <button type="submit" class="btn-form">Signup</button>
           </div>
 
         </form>
     </div>
-
-      <?php
-        // Retrieves the inputted name, email, and password.
-        $name_input = isset($_POST["username"]) ? $_POST["username"] : null;
-        $email_input = isset($_POST["email"]) ? $_POST["email"] : null;
-        $password_input = isset($_POST["password"]) ? $_POST["password"] : null;
-
-        // Loads the user database from MySQL.
-//        require '../../scripts/connection.php';
-//        $table_data = $conn -> query("SELECT email FROM users");
-//
-        // Iterates through every row in the user database.
-//        while ($row = $table_data -> fetch_assoc()) {
-//          $email = $row["email"];
-//
-//          if ($email_input == $email) {
-//            break;
-//          }
-//        }
-      ?>
 
     <!-- Authors text -->
     <div id="login-credit">
@@ -64,3 +45,48 @@ Revision 03.04.2019
   </div>
   <div id="main-right"></div>
 </main>
+_END;
+
+// Sanitize tnput functions
+require_once '../../scripts/sanitize.php';
+
+// Checks whether the varibles are set and not null
+if (isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password'])) {
+
+  // Sanitize the inputs with hashing and salting password
+  $email = mysql_entities_fix_string($conn, $_POST['email']);
+  $username = mysql_entities_fix_string($conn, $_POST['username']);
+  $password = mysql_entities_fix_string($conn, $_POST['password']);
+  $salt1 = "JT5#SENTg4y";
+  $salt2 = "mL3QytJD&FO";
+  $token = hash('ripemd128', "$salt1$password$salt2");
+
+  // Checking for email and username in the user table
+  $email_query = $conn->query("SELECT * FROM credentials WHERE user_email = '$email'");
+  $email_exists = $email_query->num_rows == 1;
+  $username_query = $conn->query("SELECT * FROM credentials WHERE user_username = '$username'");
+  $username_exists = $username_query->num_rows == 1;
+
+  // If email or username does not exist, add to table
+  if (!$email_exists && !$username_exists) {
+    $credentials = "INSERT INTO credentials (user_email, user_username, user_password)
+                    VALUES ('$email', '$username', '$token')";
+    $conn->query($credentials);
+
+    // Set the successful message variable to true
+    $_SESSION["account_creation_successful"] = true;
+
+    // Go to login page
+    header('Location: ../login/index.php');
+    exit();
+  } else {
+    // Set the error message variable to true
+    $_SESSION["account_creation_failed"] = true;
+
+    // Refresh the current page
+    header('Location: ./index.php');
+    exit();
+  }
+}
+
+?>
