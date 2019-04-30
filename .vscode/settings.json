@@ -1,14 +1,11 @@
 {
-  // Workspace Settings --------------------------------- /
-  "files.trimTrailingWhitespace": true,
+  // Workspace Settings ----------------------------------- /
+  "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "editor.tabSize": 2,
-  "editor.renderWhitespace": "all",
-  // Custom Spacing ------------------------------------- /
-  "editor.detectIndentation": true,
-  "[php], [html], [css], [scss], [javascript], [json]": {
+  "files.trimTrailingWhitespace": true,
+  // Custom Spacing --------------------------------------- /
+  "[html], [css], [scss], [javascript], [json], [php], [python]": {
+    "editor.insertSpaces": true,
     "editor.tabSize": 2,
-    "editor.insertSpaces": true
-  }
+  },
 }
