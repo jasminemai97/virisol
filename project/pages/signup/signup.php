@@ -14,7 +14,7 @@ echo <<<_END
 _END;
 
         // Form message after submission
-        require_once '../../components/input-message-signup.php';
+        require_once '../../components/message-signup.php';
 
 echo <<<_END
 
