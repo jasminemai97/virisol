@@ -30,7 +30,7 @@ echo <<<_END
 
         <!-- Create account and login buttons -->
         <div id="spaceBetween">
-          <a class="btn center" href="../signup">Create account</a>
+          <a class="btn center" href="../user-signup">Create account</a>
           <button type="submit" class="btn-form">Login</button>
         </div>
       </form>
@@ -46,7 +46,7 @@ echo <<<_END
 </main>
 _END;
 
-// Sanitize tnput functions
+// Sanitize input functions
 require_once '../../scripts/sanitize.php';
 
 // Checks whether the varibles are set and not null
@@ -65,8 +65,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
   if ($query_exists) {
     echo "<div class='message' id='green'>Login Successful</div>";
-    // $_SESSION["username"] = $username;
-    // $_SESSION["isLogin"] = true;
 
     // Set the login successful variable to true
     $_SESSION["login_successful"] = true;

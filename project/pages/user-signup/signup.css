@@ -132,8 +132,9 @@ input:focus {
 }
 
 ::placeholder {
-  color: #696969;
+  color: #929292;
   font-size: 12px;
+  opacity: 1;
 }
 
 .btn-form {
