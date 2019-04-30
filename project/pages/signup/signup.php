@@ -33,8 +33,8 @@ _END;
 echo <<<_END
 
           <div id="spaceBetween">
-            <a class="center" id="signupLink" href="../login">Log in instead</a>
-            <input type="submit" name="submit-signup" value="Signup">
+            <a class="btn center" href="../login">Log in instead</a>
+            <button type="submit" class="btn-form">Signup</button>
           </div>
 
         </form>
