@@ -15,6 +15,8 @@ echo <<<_END
 
 </form>
 
+<a class="btn center" href="../user-login">Logout</a>
+
 <div id="content">
 _END;
 
