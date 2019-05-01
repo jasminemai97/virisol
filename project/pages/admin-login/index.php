@@ -22,7 +22,7 @@ echo <<<_END
 <body>
 _END;
 
-  require "login.php";
+  require "./login.php";
 
 echo <<<_END
 </body>
