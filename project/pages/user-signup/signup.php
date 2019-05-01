@@ -18,7 +18,7 @@ _END;
 
 echo <<<_END
 
-        <form action="./index.php" method="post" enctype='multipart/form-data'>
+        <form action="./" method="post" enctype='multipart/form-data'>
 
 _END;
 
@@ -39,7 +39,7 @@ echo <<<_END
 
     <!-- Authors text -->
     <div id="login-credit">
-      <p id="authors">Authors: Jasmine Mai, Nhat Nguyen, and Albert Ong</p>
+      <a id="authors" href="../admin-login">Admins: Jasmine Mai, Nhat Nguyen, and Albert Ong</a>
     </div>
 
   </div>
@@ -84,7 +84,7 @@ if (isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["passwor
     $_SESSION["account_creation_failed"] = true;
 
     // Refresh the current page
-    header("Location: ./index.php");
+    header("Location: ./");
     exit();
   }
 }
