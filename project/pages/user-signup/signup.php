@@ -69,9 +69,9 @@ if (isset($_POST["email"]) && isset($_POST["username"]) && isset($_POST["passwor
 
   // If email or username does not exist, add to table
   if (!$email_exists && !$username_exists) {
-    $credentials = "INSERT INTO $table_name (user_email, user_username, user_password)
+    $table_query = "INSERT INTO $table_name (user_email, user_username, user_password)
                     VALUES ('$email', '$username', '$token')";
-    $conn->query($credentials);
+    $conn->query($table_query);
 
     // Set the successful message variable to true
     $_SESSION["account_creation_successful"] = true;

@@ -14,17 +14,17 @@ echo <<<_END
 _END;
 
       // Form message after submission
-      require_once '../../components/message-login.php';
+      require_once "../../components/message-login.php";
 
 echo <<<_END
 
-      <form action="index.php" method="post" enctype='multipart/form-data'>
+      <form action="index.php" method="post" enctype="multipart/form-data">
 
 _END;
 
         // Email and password inputs
-        require_once '../../components/input-email.php';
-        require_once '../../components/input-password.php';
+        require_once "../../components/input-email.php";
+        require_once "../../components/input-password.php";
 
 echo <<<_END
 
@@ -47,37 +47,35 @@ echo <<<_END
 _END;
 
 // Sanitize input functions
-require_once '../../scripts/sanitize.php';
+require_once "../../scripts/sanitize.php";
 
 // Checks whether the varibles are set and not null
-if (isset($_POST['email']) && isset($_POST['password'])) {
+if (isset($_POST["email"]) && isset($_POST["password"])) {
 
   // Sanitize the inputs
-  $email = mysql_entities_fix_string($conn, $_POST['email']);
-  $password = mysql_entities_fix_string($conn, $_POST['password']);
+  $email = mysql_entities_fix_string($conn, $_POST["email"]);
+  $password = mysql_entities_fix_string($conn, $_POST["password"]);
   $salt1 = "JT5#SENTg4y";
   $salt2 = "mL3QytJD&FO";
-  $token = hash('ripemd128', "$salt1$password$salt2");
+  $token = hash("ripemd128", "$salt1$password$salt2");
 
-  $query = $conn->query("SELECT * FROM credentials WHERE user_email='$email' AND user_password='$token'");
-  $query_exists = $query->num_rows == 1;
+  $table_query = $conn->query("SELECT * FROM $table_name WHERE user_email='$email' AND user_password='$token'");
+  $query_exists = $table_query->num_rows == 1;
 
 
   if ($query_exists) {
-    echo "<div class='message' id='green'>Login Successful</div>";
-
     // Set the login successful variable to true
     $_SESSION["login_successful"] = true;
 
     // Goes to dashboard
-    header('Location: ../user-dashboard');
+    header("Location: ../user-dashboard");
     exit();
   } else {
     // Set the login failed variable to true
     $_SESSION["login_failed"] = true;
 
     // Refresh the current page
-    header('Location: ./index.php');
+    header("Location: ./index.php");
     exit();
   }
 }
