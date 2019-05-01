@@ -12,10 +12,10 @@ if (isset($_SESSION["login_failed"])) {
   unset($_SESSION["login_failed"]);
 }
 
-// Displays login success message
-if (isset($_SESSION["login_successful"])) {
-  echo "<div class='message' id='green'>You are successful logged in!</div>";
-  unset($_SESSION["login_successful"]);
-}
+// // Displays login success message
+// if (isset($_SESSION["login_successful"])) {
+//   echo "<div class='message' id='green'>You are successful logged in!</div>";
+//   unset($_SESSION["login_successful"]);
+// }
 
 ?>

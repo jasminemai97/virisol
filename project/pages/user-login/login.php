@@ -69,7 +69,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     // Set the login successful variable to true
     $_SESSION["login_successful"] = true;
 
-    // TODO: Go to dashboard! Currently refresh the current page
+    // Goes to dashboard
     header('Location: ../user-dashboard');
     exit();
   } else {
