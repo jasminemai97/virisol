@@ -1,12 +1,12 @@
 <?php
 
 if (!isset($_SESSION["login_successful"])) {
-  header("Location: ../user-login");
+  header("Location: ../admin-login");
   exit();
 }
 
 echo <<<_END
-<h1>User Dashboard</h1>
+<h1>ADMIN DASHBOARD</h1>
 <form action="./" method="post" enctype='multipart/form-data'>
 
   <label for="content">Text File:</label>
@@ -16,12 +16,12 @@ echo <<<_END
 
 </form>
 
-<a class="btn center" href="../user-login">Logout</a>
+<a class="btn center" href="../admin-login">Logout</a>
 
 <div id="content">
 _END;
 
-$user_email = $_SESSION["user_email"];
+$user_email = $_SESSION["admin_email"];
 $user_timestamp = date("Y-m-d H:i:s");
 
 if ($_FILES) {
@@ -32,7 +32,7 @@ if ($_FILES) {
   $user_filecontent = file_get_contents($user_filename);
 
   // Add the username and file to content table
-  $user_data = "INSERT INTO $table_name (user_email, user_filename, user_filecontent, time_created)
+  $user_data = "INSERT INTO $table_name (admin_email, admin_filename, admin_filecontent, time_created)
                 VALUES ('$user_email', '$user_filename', '$user_filecontent', '$user_timestamp')";
   $conn->query($user_data);
 
@@ -42,16 +42,16 @@ if ($_FILES) {
 }
 
 // Show all the user files
-$user_query = "SELECT user_filename, user_filecontent, time_created FROM $table_name WHERE user_email='$user_email'";
+$user_query = "SELECT admin_filename, admin_filecontent, time_created FROM $table_name WHERE admin_email='$user_email'";
 $result = $conn->query($user_query);
 
 if ($result->num_rows > 0) {
     // Output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<div class='content-block'>";
-        echo "<h1>".$row["user_filename"]."</h1>";
+        echo "<h1>".$row["admin_filename"]."</h1>";
         echo "<h2>".$row["time_created"]."</h2>";
-        echo "<p>".$row["user_filecontent"]."</p>";
+        echo "<p>".$row["admin_filecontent"]."</p>";
         echo "</div>";
     }
 }

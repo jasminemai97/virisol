@@ -1,17 +1,3 @@
-
-/* singup.css
- *
- * Stylesheet for the signup page.
- *
- * Online Virus Check
- * CS 174: Server-side Web Programming
- * Professor Fabio Di Troia
- *
- * Written by Jasmine Mai, Nhat Nguyen, and Albert Ong
- * Revision 03.04.2019
- */
-
-
 /* Import ========================================= */
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
 
@@ -30,7 +16,7 @@ body {
     justify-content: center;
 }
 
-/* Code ============================================ */
+/* Code ================================================ */
 main {
   /* background-color: rgba(255, 131, 131, 0.1); */
   color: #202124;
@@ -39,7 +25,7 @@ main {
   width: 100%;
 }
 
-/* Login Left ====================================== */
+/* Login Left ========================================== */
 #main-left {
   /* border: 1px dashed rgba(255, 131, 131, 0.5); */
   background-color: #ffffff;
@@ -51,6 +37,7 @@ main {
   padding: 6% 4%;
   width: 45%;
 }
+
 
 /* Heading 1 and 2 ====================================== */
 h1 {
@@ -73,6 +60,7 @@ h2 {
   font-size: 1em;
 }
 
+
 #login-brand, #login-container, #login-credit {
   /* border: 1px dashed rgba(255, 131, 131, 0.5); */
   background-color: #ffffff;
@@ -90,7 +78,7 @@ label span {
   color: #ff0000;
 }
 
-input[type=text], input[type=email], input[type=password] {
+input[type=email], input[type=password] {
   border: 1px solid #dddddd;
   border-radius: 4px;
   color: #202124;
@@ -182,9 +170,9 @@ input:focus {
 /* Login Right ===================================== */
 #main-right {
   background-color: rgba(255, 131, 131, 0.1);
-  background: url('../../resources/signup-1200px.png'),
-              linear-gradient(to right top, #ff6f91, #ff807d, #ff966d, #ffae61, #ffc75f);
-    background-size: 100%;
+  background: url('../../resources/admin-1200px.png'),
+              linear-gradient(to right bottom, #e74856, #e63d56, #e53057, #e42058, #e3005a);
+    background-size: 125%;
     background-position: center;
     background-repeat: no-repeat;
   width: 55%;

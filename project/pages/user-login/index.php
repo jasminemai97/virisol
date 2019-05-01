@@ -4,7 +4,7 @@
 session_start();
 
 // Database for user credentials
-require_once '../../scripts/credentialsDB.php';
+require_once "../../scripts/database/user-credentials.php";
 
 echo <<<_END
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ echo <<<_END
 <body>
 _END;
 
-  require 'login.php';
+  require "./login.php";
 
 echo <<<_END
 </body>

@@ -9,7 +9,7 @@ echo <<<_END
 
     <!-- Form Start ================================== -->
     <div id="login-container">
-      <h2>Login to your account</h2>
+      <h2>Admin Login</h2>
 
 _END;
 
@@ -30,7 +30,7 @@ echo <<<_END
 
         <!-- Create account and login buttons -->
         <div id="spaceBetween">
-          <a class="btn center" href="../user-signup">Create account</a>
+          <a class="btn center" href="../user-login">Back to user login</a>
           <button type="submit" class="btn-form">Login</button>
         </div>
       </form>
@@ -55,21 +55,21 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
   // Sanitize the inputs with hashing and salting password
   $email = mysql_entities_fix_string($conn, $_POST["email"]);
   $password = mysql_entities_fix_string($conn, $_POST["password"]);
-  $salt1 = "JT5#SENTg4y";
-  $salt2 = "mL3QytJD&FO";
-  $token = hash("ripemd128", "$salt1$password$salt2");
+  // $salt1 = "JT5#SENTg4y";
+  // $salt2 = "mL3QytJD&FO";
+  // $token = hash("ripemd128", "$salt1$password$salt2");
 
-  $table_query = $conn->query("SELECT * FROM $table_name WHERE user_email='$email' AND user_password='$token'");
+  $table_query = $conn->query("SELECT * FROM $table_name WHERE admin_email='$email' AND admin_password='$password'");
   $query_exists = $table_query->num_rows == 1;
 
-  // If email and password match and in table, login and go to dashboard
+
   if ($query_exists) {
-    // TODO: Add correct login session variable
+    // Set the login successful variable to true
     $_SESSION["login_successful"] = true;
-    $_SESSION["user_email"] = $email;
+    $_SESSION["admin_email"] = $email;
 
     // Goes to dashboard
-    header("Location: ../user-dashboard");
+    header("Location: ../admin-dashboard");
     exit();
   } else {
     // Set the login failed variable to true
