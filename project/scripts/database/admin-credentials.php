@@ -31,11 +31,11 @@ if (!$table_exist) {
   $admin3 = array("admin_email"=>"albertong@admin.com", "admin_username"=>"adminAlbert", "admin_password"=>"grapefruit70!");
 
   // Insert admin information to the table
-  $table_query = "INSERT INTO $table_name (admin_email, admin_username, admin_password) VALUES ('jasminemai@admin.com', 'adminJasmine', 'watermelon42!')";
+  $table_query = "INSERT INTO $table_name (admin_email, admin_username, admin_password) VALUES ('jasminemai@admin.com', 'adminJasmine', '123123')";
   $conn->query($table_query);
-  $table_query = "INSERT INTO $table_name (admin_email, admin_username, admin_password) VALUES ('nhatnguyen@admin.com', 'adminNhat', 'pineapple19!')";
+  $table_query = "INSERT INTO $table_name (admin_email, admin_username, admin_password) VALUES ('nhatnguyen@admin.com', 'adminNhat', '123123')";
   $conn->query($table_query);
-  $table_query = "INSERT INTO $table_name (admin_email, admin_username, admin_password) VALUES ('albertong@admin.com', 'adminAlbert', 'grapefruit70!')";
+  $table_query = "INSERT INTO $table_name (admin_email, admin_username, admin_password) VALUES ('albertong@admin.com', 'adminAlbert', '123123')";
   $conn->query($table_query);
 }
 

@@ -19,9 +19,9 @@ if (!$table_exist) {
   // Declare MySQL table columns with data types
   $table = "CREATE TABLE $table_name (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    user_email VARCHAR(128) NOT NULL,
-    user_filename VARCHAR(128) NOT NULL,
-    user_filecontent TEXT(65535) NOT NULL,
+    admin_email VARCHAR(128) NOT NULL,
+    admin_filename VARCHAR(128) NOT NULL,
+    admin_filecontent TEXT(65535) NOT NULL,
     time_created TIMESTAMP NOT NULL
   ) ENGINE MyISAM";
 

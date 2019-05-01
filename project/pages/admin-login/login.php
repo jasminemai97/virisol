@@ -66,6 +66,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
   if ($query_exists) {
     // Set the login successful variable to true
     $_SESSION["login_successful"] = true;
+    $_SESSION["admin_email"] = $email;
 
     // Goes to dashboard
     header("Location: ../admin-dashboard");
