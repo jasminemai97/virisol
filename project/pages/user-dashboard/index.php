@@ -22,7 +22,7 @@ echo <<<_END
 <body>
 _END;
 
-  require "dashboard.php";
+  require "./dashboard.php";
 
 echo <<<_END
 </body>
