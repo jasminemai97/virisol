@@ -52,7 +52,7 @@ require_once "../../scripts/sanitize.php";
 // Checks whether the varibles are set and not null
 if (isset($_POST["email"]) && isset($_POST["password"])) {
 
-  // Sanitize the inputs
+  // Sanitize the inputs with hashing and salting password
   $email = mysql_entities_fix_string($conn, $_POST["email"]);
   $password = mysql_entities_fix_string($conn, $_POST["password"]);
   $salt1 = "JT5#SENTg4y";
