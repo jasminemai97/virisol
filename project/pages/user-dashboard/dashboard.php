@@ -1,12 +1,12 @@
 <?php
 
 if (!isset($_SESSION["login_successful"])) {
-  header('Location: ../user-login');
+  header("Location: ../user-login");
   exit();
 }
 
 echo <<<_END
-<h1>User Login</h1>
+<h1>User Dashboard</h1>
 <form action="./" method="post" enctype='multipart/form-data'>
 
   <label for="content">Text File:</label>
@@ -21,7 +21,7 @@ echo <<<_END
 <div id="content">
 _END;
 
-$user_email = "Pizza";
+$user_email = $_SESSION["user_email"];
 $user_timestamp = date("Y-m-d H:i:s");
 
 if ($_FILES) {

@@ -62,10 +62,11 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
   $table_query = $conn->query("SELECT * FROM $table_name WHERE user_email='$email' AND user_password='$token'");
   $query_exists = $table_query->num_rows == 1;
 
-
+  // If email and password match and in table, login and go to dashboard
   if ($query_exists) {
-    // Set the login successful variable to true
+    // TODO: Add correct login session variable
     $_SESSION["login_successful"] = true;
+    $_SESSION["user_email"] = $email;
 
     // Goes to dashboard
     header("Location: ../user-dashboard");
