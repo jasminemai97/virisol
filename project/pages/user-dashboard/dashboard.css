@@ -1,21 +1,7 @@
-
-/* singup.css
- *
- * Stylesheet for the signup page.
- *
- * Online Virus Check
- * CS 174: Server-side Web Programming
- * Professor Fabio Di Troia
- *
- * Written by Jasmine Mai, Nhat Nguyen, and Albert Ong
- * Revision 03.04.2019
- */
-
-
-/* Import ========================================= */
+/* Import ============================================== */
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
 
-/* Reset ========================================== */
+/* Reset =============================================== */
 * {
   box-sizing: border-box;
 }
@@ -30,7 +16,7 @@ body {
     justify-content: center;
 }
 
-/* Code ============================================ */
+/* Base ================================================ */
 body {
   display: flex;
     align-items: center;
@@ -56,7 +42,6 @@ a {
 
 input[type=file] {
   border:1px solid grey;
-  height: auto;
 }
 
 input[type=text], input[type=email], input[type=password] {
@@ -94,24 +79,4 @@ input {
 .content-block h2 {
   margin: 0 0 10px 0;
   font-size: 12px;
-}
-
-.message {
-  border-radius: 5px;
-  display: flex;
-    align-items: center;
-    justify-content: center;
-  margin-bottom: 10px;
-  height: 40px;
-  width: 300px;
-}
-
-#red {
-  background-color: #f26175;
-  color: #ffffff;
-}
-
-#green {
-  background-color: #69dd95;
-  color: #ffffff;
 }
