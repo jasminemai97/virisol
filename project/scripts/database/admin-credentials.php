@@ -19,12 +19,24 @@ if (!$table_exist) {
   // Declare MySQL table columns with data types
   $table = "CREATE TABLE $table_name (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    user_email VARCHAR(128) NOT NULL UNIQUE,
-    user_username VARCHAR(128) NOT NULL UNIQUE,
-    user_password VARCHAR(128) NOT NULL
+    admin_email VARCHAR(128) NOT NULL UNIQUE,
+    admin_username VARCHAR(128) NOT NULL UNIQUE,
+    admin_password VARCHAR(128) NOT NULL
   ) ENGINE MyISAM";
-
   $conn -> query($table);
+
+  // Holds all of the admin information
+  $admin1 = array("admin_email"=>"jasminemai@admin.com", "admin_username"=>"adminJasmine", "admin_password"=>"watermelon42!");
+  $admin2 = array("admin_email"=>"nhatnguyen@admin.com", "admin_username"=>"adminNhat", "admin_password"=>"pineapple19!");
+  $admin3 = array("admin_email"=>"albertong@admin.com", "admin_username"=>"adminAlbert", "admin_password"=>"grapefruit70!");
+
+  // Insert admin information to the table
+  $table_query = "INSERT INTO $table_name (admin_email, admin_username, admin_password) VALUES ('jasminemai@admin.com', 'adminJasmine', 'watermelon42!')";
+  $conn->query($table_query);
+  $table_query = "INSERT INTO $table_name (admin_email, admin_username, admin_password) VALUES ('nhatnguyen@admin.com', 'adminNhat', 'pineapple19!')";
+  $conn->query($table_query);
+  $table_query = "INSERT INTO $table_name (admin_email, admin_username, admin_password) VALUES ('albertong@admin.com', 'adminAlbert', 'grapefruit70!')";
+  $conn->query($table_query);
 }
 
 ?>
