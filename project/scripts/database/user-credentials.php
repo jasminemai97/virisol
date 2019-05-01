@@ -1,32 +1,30 @@
 <?php
 
-// Information needed to connect to the MySQL database.
-require_once 'connection.php';
+// Information needed to connect to the MySQL database
+require_once "connection.php";
 
-// Connects to the MySQL database. Error message if unable to connect.
-$conn = new mysqli($hostname, $username, $password);
-if ($conn->connect_error) die($conn->connect_error);
+// Connects to database and create if it does not exist
+require_once "database.php";
 
-// Create database if it does not exist and then go into the database
-$conn->query("CREATE DATABASE IF NOT EXISTS project");
-$conn->query("USE project");
+// Declare table name
+$table_name = "user_credentials";
 
 // Checks if credentials table exists.
-$tables = $conn->query("SHOW TABLES LIKE 'credentials'");
-$table_exists = $tables -> num_rows == 1;
+$table_query = $conn -> query("SHOW TABLES LIKE '$table_name'");
+$table_exist = $table_query -> num_rows == 1;
 
 // If the credentials table does not exist, create the table
-if (!$table_exists) {
+if (!$table_exist) {
 
-  // Initializes the table of users.
-  $credentials = "CREATE TABLE credentials (
+  // Declare MySQL table columns with data types
+  $table = "CREATE TABLE $table_name (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     user_email VARCHAR(128) NOT NULL UNIQUE,
     user_username VARCHAR(128) NOT NULL UNIQUE,
     user_password VARCHAR(128) NOT NULL
   ) ENGINE MyISAM";
 
-  $conn->query($credentials);
+  $conn -> query($table);
 }
 
 ?>
