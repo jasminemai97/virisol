@@ -3,7 +3,7 @@ Online Virus Check is a site that allows user to upload a file and check if the 
 Group project for CS 147: Server-side Web Programming. 
 
 <p align="center">
-  <img width="300" src="https://raw.githubusercontent.com/jasminemai97/online-virus-check/master/project/resources/favicon.png?token=ADGS55H5XDK5M77BBDH34US42G6FI">
+  <img width="300" src="https://raw.githubusercontent.com/jasminemai97/online-virus-check/master/project/resources/favicon.png?token=ADGS55F6F4TKSB53XEOSPA24ZYVB4">
 </p>
 
 ## Technologies and Tools
