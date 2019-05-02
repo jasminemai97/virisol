@@ -11,7 +11,7 @@ if (isset($_SESSION["login_successful"])) {
 }
 
 // Displays login fail message
-if (isset($_SESSION["login_failed"]) || isset($_SESSION["admin_login_failed"])) {
+if (isset($_SESSION["login_failed"])) {
   echo "<div class='message' id='red'>Your email or password were incorrect!</div>";
 }
 

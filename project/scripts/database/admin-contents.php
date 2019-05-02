@@ -22,6 +22,7 @@ if (!$table_exist) {
     admin_email VARCHAR(128) NOT NULL,
     admin_filename VARCHAR(128) NOT NULL,
     admin_filecontent TEXT(65535) NOT NULL,
+    admin_filebyte VARCHAR(20) NOT NULL,
     time_created TIMESTAMP NOT NULL
   ) ENGINE MyISAM";
 
