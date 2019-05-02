@@ -28,6 +28,16 @@ body {
   padding: 0 6%;
 }
 
+h1 {
+  font-size: 3.5em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
 form {
   width: 300px;
 }
@@ -73,6 +83,8 @@ input {
 }
 
 .content-block h1 {
+  font-size: 1.5em;
+  font-weight: bold;
   margin: 0 0 5px 0;
 }
 
