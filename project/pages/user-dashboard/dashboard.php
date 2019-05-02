@@ -9,7 +9,7 @@ echo <<<_END
 <h1>User Dashboard</h1>
 <form action="./" method="post" enctype='multipart/form-data'>
 
-  <label for="content">Text File:</label>
+  <h2>Upload file</h2>
   <input type="file" accept=".txt" name="content" required>
 
   <input type="submit" value="Submit">
@@ -30,10 +30,13 @@ if ($_FILES) {
   $user_filename = $_FILES["content"]["name"];
   move_uploaded_file($_FILES["content"]["tmp_name"], $user_filename);
   $user_filecontent = file_get_contents($user_filename);
-
+  
+  // Converts the file contents into a string of hexadecimal. 
+  $user_filecontent_bytes = implode(unpack("H*", $user_filecontent));
+  
   // Add the username and file to content table
   $user_data = "INSERT INTO $table_name (user_email, user_filename, user_filecontent, time_created)
-                VALUES ('$user_email', '$user_filename', '$user_filecontent', '$user_timestamp')";
+                VALUES ('$user_email', '$user_filename', '$user_filecontent_bytes', '$user_timestamp')";
   $conn->query($user_data);
 
   // Refresh the current page
@@ -48,11 +51,13 @@ $result = $conn->query($user_query);
 if ($result->num_rows > 0) {
     // Output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<div class='content-block'>";
-        echo "<h1>".$row["user_filename"]."</h1>";
-        echo "<h2>".$row["time_created"]."</h2>";
-        echo "<p>".$row["user_filecontent"]."</p>";
-        echo "</div>";
+      
+      echo <<< _END
+        <div class='content-block'>
+          <h1>$row[user_filename]</h1>
+          <h2>$row[time_created]</h2>
+        </div>
+      _END;
     }
 }
 
