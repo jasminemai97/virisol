@@ -85,11 +85,7 @@ input {
 }
 
 .content-block:hover {
-  border: 5px solid rgb(124, 124, 124);
-}
-
-.content-block:hover {
-  border: 5px solid rgb(124, 124, 124);
+  outline: 5px solid rgb(124, 124, 124);
 }
 
 .content-block h1 {

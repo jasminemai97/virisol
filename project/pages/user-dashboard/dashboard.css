@@ -92,14 +92,6 @@ input {
   background: rgb(255, 134, 134);
 }
 
-.content-block:hover {
-  border: 5px solid rgb(124, 124, 124);
-}
-
-.virus {
-  background: rgb(255, 134, 134);
-}
-
 .content-block h1 {
   font-size: 1.5em;
   font-weight: bold;
