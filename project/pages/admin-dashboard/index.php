@@ -3,7 +3,7 @@
 // Start the project session
 session_start();
 
-// Database for user credentials
+// Database for admin contents
 require_once "../../scripts/database/admin-contents.php";
 
 echo <<<_END
@@ -16,7 +16,7 @@ echo <<<_END
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="dashboard.css">
   <link rel="icon" href="../../resources/favicon.png">
-  <title>Admin Dashboard - Online Virus Check</title>
+  <title>Virisol - Admin Dashboard</title>
 </head>
 
 <body>
