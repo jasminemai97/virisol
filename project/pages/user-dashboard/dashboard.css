@@ -33,13 +33,15 @@ h1 {
   font-weight: bold;
 }
 
-h2 {
-  font-size: 1.6em;
-  font-weight: bold;
-}
-
 form {
   width: 300px;
+}
+
+label {
+  display: block;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 p {
@@ -71,24 +73,36 @@ input {
 }
 
 #content {
-  border: 1px solid grey;
   margin: 20px 0;
   width: 600px;
 }
 
 .content-block {
   background-color: #0000001c;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .1);
+  margin: 0 0 20px 0;
   padding: 10px 6% 10px 6%;
-  margin: 10px 0 10px 0;
+}
+
+.content-block:hover {
+  outline: 5px solid rgb(124, 124, 124);
+}
+
+.virus {
+  background: rgb(255, 134, 134);
 }
 
 .content-block h1 {
   font-size: 1.5em;
   font-weight: bold;
-  margin: 0 0 5px 0;
+  margin: 0;
 }
 
 .content-block h2 {
-  margin: 0 0 10px 0;
+  margin: 0 0 6px 0;
   font-size: 12px;
+}
+
+.content-block p {
+  line-height: 1.5;
 }
