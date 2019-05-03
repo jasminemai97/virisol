@@ -16,7 +16,7 @@ echo <<<_END
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="signup.css">
   <link rel="icon" href="../../resources/favicon.png">
-  <title>Signup - Online Virus Check</title>
+  <title>Virisol - Signup</title>
 </head>
 
 <body>
