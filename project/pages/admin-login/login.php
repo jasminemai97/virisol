@@ -4,7 +4,7 @@ echo <<<_END
 <main class="center">
   <div id="main-left">
     <div id="login-brand">
-      <h1>Online Virus Check</h1>
+      <h1>Virisol</h1>
     </div>
 
     <!-- Form Start ================================== -->
