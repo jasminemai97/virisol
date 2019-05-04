@@ -21,8 +21,8 @@ if (!$table_exist) {
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     admin_email VARCHAR(128) NOT NULL,
     admin_filename VARCHAR(128) NOT NULL,
-    admin_filecontent TEXT(65535) NOT NULL,
-    admin_filebyte VARCHAR(20) NOT NULL,
+    admin_filecontent TEXT NOT NULL,
+    admin_filebyte CHAR(20) NOT NULL,
     time_created TIMESTAMP NOT NULL
   ) ENGINE MyISAM";
 

@@ -22,7 +22,7 @@ if (!$table_exist) {
     user_email VARCHAR(128) NOT NULL,
     user_filename VARCHAR(128) NOT NULL,
     user_filecontent TEXT(65535) NOT NULL,
-    user_filebyte VARCHAR(65535) NOT NULL,
+    user_filebyte TEXT NOT NULL,
     time_created TIMESTAMP NOT NULL
   ) ENGINE MyISAM";
 
