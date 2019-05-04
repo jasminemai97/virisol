@@ -54,8 +54,6 @@ if ($result->num_rows > 0) {
 
     // Retrieves the head of the filebytes
     $filebytes = $row["user_filebyte"];
-    $head_length = 20; 
-    $filebytes_head = substr($filebytes, 0, $head_length);
     
     // Stores whether if file has a virus - false by default. 
     $has_virus = false; 
