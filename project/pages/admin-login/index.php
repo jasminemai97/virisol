@@ -16,7 +16,7 @@ echo <<<_END
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="login.css">
   <link rel="icon" href="../../resources/favicon.png">
-  <title>Admin Login - Online Virus Check</title>
+  <title>Virisol - Admin Login</title>
 </head>
 
 <body>

@@ -52,28 +52,66 @@ if ($result->num_rows > 0) {
   // Output data of each row
   while($row = $result->fetch_assoc()) {
 
+    // Retrieves the head of the filebytes
     $filebytes = $row["user_filebyte"];
-    $table_query = $conn->query("SELECT * FROM admin_contents WHERE admin_filebyte='$filebytes'");
-    $query_exists = $table_query->num_rows == 1;
-
-    if ($query_exists) {
+    
+    // Stores whether if file has a virus - false by default. 
+    $has_virus = false; 
+    
+    // Iterates through every virus file. 
+    $admin_query = $conn->query("SELECT admin_filebyte FROM admin_contents");
+    while ($virus_file = $admin_query->fetch_assoc()) {
+      
+      $virus_bytes = $virus_file['admin_filebyte'];
+      
+      // Checks if the virus appears in the file. 
+      if (strpos($filebytes, $virus_bytes) !== false) {
+        $has_virus = true;
+        break;
+      }
+    }
+    
+    // $has_virus = strpos($file2, $file1_head) !== false;
+    
+    // The maximum display length. 
+    $display_length = 40; 
+    
+    // Shortens the display content if it's too long.  
+    if (strlen($row['user_filecontent']) >= $display_length) {
+      $shortened_content = substr($row['user_filecontent'], 0, $display_length);
+      $display_content = "$shortened_content...";
+      
+    }
+    else {
+      $display_content = $row["user_filecontent"];
+    }
+    
+    // Formats the display hex and display hex if they're too long. 
+    if (strlen($filebytes) >= $display_length) {
+      $shortened_hex = substr($row['user_filebyte'], 0, $display_length);  
+      $display_hex = "$shortened_hex...";
+    }
+    else {
+      $display_hex = $filebytes;
+    }
+    
+    if ($has_virus) {
       echo "<div class='content-block virus'>
         <h1>VIRUS $row[user_filename]</h1>
         <h2>$row[time_created]</h2>
-        <p><b>Content:</b> $row[user_filecontent]</p>
-        <p><b>Hex:</b> $row[user_filebyte]</p>
+        <p><b>Content:</b> $display_content</p>
+        <p><b>Hex:</b> $display_hex</p>
       </div>";
     } else {
       echo "<div class='content-block'>
         <h1>$row[user_filename]</h1>
         <h2>$row[time_created]</h2>
-        <p><b>Content:</b> $row[user_filecontent]</p>
-        <p><b>Hex:</b> $row[user_filebyte]</p>
+        <p><b>Content:</b> $display_content</p>
+        <p><b>Hex:</b> $display_hex</p>
       </div>";
     }
   }
 }
 
 echo "</div>";
-
 ?>
