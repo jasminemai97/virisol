@@ -26,17 +26,24 @@ if (!$table_exist) {
   $conn -> query($table);
 
   // Holds all of the admin information
-  $admin1 = array("admin_email"=>"jasminemai@admin.com", "admin_username"=>"adminJasmine", "admin_password"=>"watermelon42!");
-  $admin2 = array("admin_email"=>"nhatnguyen@admin.com", "admin_username"=>"adminNhat", "admin_password"=>"pineapple19!");
-  $admin3 = array("admin_email"=>"albertong@admin.com", "admin_username"=>"adminAlbert", "admin_password"=>"grapefruit70!");
-
+  $admin_data = array(
+    array("admin_email"=>"jasminemai@admin.com", "admin_username"=>"adminJasmine", "admin_password"=>"watermelon42"),
+    array("admin_email"=>"nhatnguyen@admin.com", "admin_username"=>"adminNhat", "admin_password"=>"pineapple19"),
+    array("admin_email"=>"albertong@admin.com", "admin_username"=>"adminAlbert", "admin_password"=>"grapefruit70"),
+  );
+  
   // Insert admin information to the table
-  $table_query = "INSERT INTO $table_name (admin_email, admin_username, admin_password) VALUES ('jasminemai@admin.com', 'adminJasmine', '123123')";
-  $conn->query($table_query);
-  $table_query = "INSERT INTO $table_name (admin_email, admin_username, admin_password) VALUES ('nhatnguyen@admin.com', 'adminNhat', '123123')";
-  $conn->query($table_query);
-  $table_query = "INSERT INTO $table_name (admin_email, admin_username, admin_password) VALUES ('albertong@admin.com', 'adminAlbert', '123123')";
-  $conn->query($table_query);
-}
+  foreach ($admin_data as $info) {
+  
+    // Salting and hashing the password. 
+    $salt1 = "JT5#SENTg4y";
+    $salt2 = "mL3QytJD&FO";
+    $token = hash("ripemd128", "$salt1$info[admin_password]$salt2");
 
+    $conn->query("INSERT INTO $table_name 
+                     (admin_email, admin_username, admin_password) 
+                  VALUES 
+                   ('$info[admin_email]', '$info[admin_username]', '$token')");
+  }
+}
 ?>
