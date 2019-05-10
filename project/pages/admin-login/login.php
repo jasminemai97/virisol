@@ -55,11 +55,11 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
   // Sanitize the inputs with hashing and salting password
   $email = mysql_entities_fix_string($conn, $_POST["email"]);
   $password = mysql_entities_fix_string($conn, $_POST["password"]);
-  // $salt1 = "JT5#SENTg4y";
-  // $salt2 = "mL3QytJD&FO";
-  // $token = hash("ripemd128", "$salt1$password$salt2");
+  $salt1 = "JT5#SENTg4y";
+  $salt2 = "mL3QytJD&FO";
+  $token = hash("ripemd128", "$salt1$password$salt2");
 
-  $table_query = $conn->query("SELECT * FROM $table_name WHERE admin_email='$email' AND admin_password='$password'");
+  $table_query = $conn->query("SELECT * FROM $table_name WHERE admin_email='$email' AND admin_password='$token'");
   $query_exists = $table_query->num_rows == 1;
 
 
