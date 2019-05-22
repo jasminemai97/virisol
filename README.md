@@ -18,4 +18,4 @@ Group project for CS 147: Server-side Web Programming.
 All parts of Virisol are free to use and abuse under the open-source MIT license.
 
 ## Acknowledgement
-Written by [Jasmine Mai](https://github.com/jasminemai97), [Nhat Nguyen](https://github.com/nguyen-nhat), and [Albert Ong](https://github.com/Anferensis).
+Written by [Jasmine Mai](https://github.com/jasminemai97), [Nhat Nguyen](https://github.com/nguyen-nhat), and [Albert Ong](https://github.com/Albert-C-Ong).
